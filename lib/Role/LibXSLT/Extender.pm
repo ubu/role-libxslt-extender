@@ -74,7 +74,7 @@ XSLT is great for recursively transforming nested XML documents but operating on
 
 =item set_extension_namespace
 
-In addition to the various custom functions in your extention class, you are required to implement the set_extension_namespace() method. This namespace URI will be used to register your functions with the LibXSLT processor and is the mechanism by which your custom functions will be avialible from within your XSLT stylesheets.
+In addition to the various custom functions in your extention class, you are required to implement the set_extension_namespace() method. This namespace URI will be used to register your functions with the LibXSLT processor and is the mechanism by which your custom functions will be available from within your XSLT stylesheets.
 
 For example, if your extention class has the following:
 
@@ -88,9 +88,13 @@ You can access functions in this namespace by declaring that namespace in your X
       xmlns:myapp="http:/fake.tld/my/app/namespace/v1"
   >
 
-And then using the bound prefix to call the fuctions in that namespace:
+And then using the bound prefix to call the functions in that namespace:
 
   <xsl:value-of select="myapp:some_function_name( arguments )" />
+
+=item xslt_processor
+
+This method returns the instance of the L<XML::LibXSLT> processor with your extension functions registered and ready to go.
 
 =back
 
