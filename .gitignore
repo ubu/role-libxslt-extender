@@ -1,3 +1,4 @@
-./build/
+.build/
+Role-LibXSLT-Extender-*/
 *.tar.gz
 .DS_Store
