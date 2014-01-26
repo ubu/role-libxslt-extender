@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 use Moose;
 use Try::Tiny;
-
+use Class::Load;
 =head1 NAME
 
 xxslt.pl - load Perl extension classes while performing XSLT transformations.
@@ -46,7 +46,7 @@ else {
 
 # load the extension class
 try {
-    Class::MOP::load_class( $extension_class );
+    Class::Load::load_class( $extension_class );
 }
 catch {
     die "Couldn't load extension class '$extension_class': $_ \n";
